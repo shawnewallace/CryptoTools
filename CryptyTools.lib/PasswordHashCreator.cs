@@ -24,12 +24,17 @@ namespace CryptoTools.lib
       csprng.GetBytes(salt);
 
       // Hash the password and encode the parameters
-      var hash = HashCreator.Create(password, salt, CryptoToolsConstants.PBKDF2_ITERATIONS, CryptoToolsConstants.HASH_BYTE_SIZE);
+      var hash = HashCreator.Create(
+				password,
+				salt, 
+				CryptoToolsConstants.PBKDF2_ITERATIONS, 
+				CryptoToolsConstants.HASH_BYTE_SIZE);
 
-      return string.Format(CryptoToolsConstants.HASH_OUTPUT_FORMAT,
-       CryptoToolsConstants.PBKDF2_ITERATIONS,
-       Convert.ToBase64String(salt),
-       Convert.ToBase64String(hash));
+      return string.Format(
+				CryptoToolsConstants.HASH_OUTPUT_FORMAT,
+				CryptoToolsConstants.PBKDF2_ITERATIONS,
+				Convert.ToBase64String(salt),
+				Convert.ToBase64String(hash));
     }
   }
 }
