@@ -2,7 +2,7 @@ using System;
 
 namespace CryptoTools.lib
 {
-  internal static class HashedPasswordValidator
+  public static class HashedPasswordValidator
   {
     /// <summary>
     /// Validates a password given a hash of the correct one.
